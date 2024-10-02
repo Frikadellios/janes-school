@@ -1,0 +1,64 @@
+---
+import BaseHead from '@/components/BaseHead.astro'
+import TailwindIndicator from '@/components/layout/tailwind-indicator.astro'
+
+type Props = {
+  title: string
+  description?: string
+  image?: string | undefined
+  articleDate?: string | undefined
+  lang?: string
+  mainClass?: string
+  bodyClass?: string
+}
+
+import I18NHeader from '@/components/layout/I18nHeaders.astro'
+import ProviderAnimations from '@/components/layout/provider-animations.astro'
+import '@/styles/tailwind.css'
+import Footer from '@/components/Footer.astro'
+import NavigationSection from '@/components/react/navigation'
+import { getLangFromUrl, useTranslations } from '@/i18n/config'
+import { getLocale } from '@/i18n/utils'
+import { cn } from '@/lib/utils'
+import ViewTransitions from 'astro/components/ViewTransitions.astro'
+
+const locale = getLocale(Astro)
+export type Locale = keyof typeof locale
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const { title, description, image, articleDate, mainClass, bodyClass } = Astro.props
+---
+
+<!doctype html>
+<html lang={locale} class="bg-background text-foreground scroll-smooth">
+	<head>
+		<BaseHead
+			title={title}
+			description={description}
+			ogImage={image}
+			articleDate={articleDate}
+			lang={locale}
+		/>
+		<I18NHeader />
+    <ViewTransitions />
+		<ProviderAnimations />
+	</head>
+	<body class={cn('flex page font-sans antialiased min-h-screen', bodyClass)}>
+    <NavigationSection client:visible />
+			<main
+				class={cn(
+					'mt-4 grid gap-12 overflow-hidden px-5 antialiased sm:mx-auto sm:max-w-2xl sm:px-8 md:max-w-6xl md:overflow-visible lg:px-0',
+					mainClass
+				)}
+			>
+				<slot />
+			</main>
+      <Footer />
+			<TailwindIndicator />
+	</body>
+  <style is:global>
+		img {
+			content-visibility: auto;
+		}
+	</style>
+</html>

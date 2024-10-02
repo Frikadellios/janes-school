@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string
+  description: string
+  content: string
+}
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+
+const { title, description, content } = Astro.props
+---
+
+<section class="my-auto mx-auto">
+	<div class="py-24 lg:py-32">
+		<div aria-hidden="true" class="absolute start-1/2 -top-96 flex -translate-x-1/2 transform">
+			<div
+				class="from-background/50 to-background h-[44rem] w-[25rem] -translate-x-[10rem] rotate-[-60deg] transform bg-gradient-to-r blur-3xl"
+			>
+			</div>
+			<div
+				class="from-primary-foreground via-primary-foreground to-background h-[50rem] w-[90rem] origin-top-left -translate-x-[15rem] -rotate-12 rounded-full bg-gradient-to-tl blur-3xl"
+			>
+			</div>
+		</div>
+		{/* End Gradients */}
+		<div class="relative z-10">
+			<div class="container py-10 lg:py-16">
+				<div class="mx-auto max-w-2xl text-center">
+					<Badge variant="outline"><p class="">{description}</p></Badge>
+					{/* Title */}
+					<div class="mt-5 max-w-2xl">
+						<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+							{title}
+						</h1>
+					</div>
+					{/* End Title */}
+					<div class="mt-5 max-w-3xl">
+						<p class="text-muted-foreground text-xl">
+							{content}
+						</p>
+					</div>
+					{/* Buttons */}
+					<div class="mt-8 flex justify-center gap-3">
+						<Button size={'lg'} variant={'default'}>Get started</Button>
+						<Button size={'lg'} variant={'outline'}> Learn more </Button>
+					</div>
+					{/* End Buttons */}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

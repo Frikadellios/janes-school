@@ -1,0 +1,49 @@
+---
+import { LANGUAGES, LOCALES, type Lang } from '@/i18n/config'
+const url = Astro.url
+const origin = url.origin
+const [, lang, ...slug] = url.pathname.split('/')
+---
+
+<!-- OPTION 01 -->{
+  lang in LANGUAGES && (
+    <select
+      id="lang-selector"
+      class="bg-background text-foreground rounded-lg px-3 py-1.5"
+    >
+      <option value="" disabled selected>
+        {LANGUAGES[lang as Lang]}
+      </option>
+      {Object.entries(LANGUAGES).map(([l, label]) => (
+        <>
+          {l !== lang && (
+            <option data-lang={l} value={`${origin}/${l}/${slug.join("/")}`}>
+              {label}
+            </option>
+          )}
+        </>
+      ))}
+    </select>
+  )
+}
+
+<script>
+  function optionsAsLinks(selector: string) {
+    const selectElem = document.querySelector(selector) as unknown as HTMLSelectElement
+
+    selectElem.addEventListener("change", () => {
+      const selectedIndex = selectElem.selectedIndex
+
+      if (selectElem.options[selectedIndex].value) {
+        const url = selectElem.options[selectedIndex].value
+        const lang = selectElem.options[selectedIndex].attributes.item(0)!.value
+        const aElem = document.createElement("a")
+        aElem.setAttribute("href", url)
+        aElem.setAttribute("hreflang", lang)
+        aElem.click()
+      }
+    })
+  }
+
+  optionsAsLinks("#lang-selector")
+</script>
