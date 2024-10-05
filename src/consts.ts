@@ -1,4 +1,4 @@
-import type { Links, PageSEO, Site, Socials } from '@/types'
+import type { LOGO_TITLE, Links, PageSEO, Site, Socials } from '@/types'
 
 export const NAVIGATION = [
   { path: '/', name: 'nav.home' },
@@ -19,6 +19,14 @@ export const POST_METADATA = {
   showRelatedPosts: true, // Show related posts in blog post, TODO: Add support for hiding related posts
   showTableOfContents: true, // Show table of contents in blog post
   showShareButtons: 'both' // Show share buttons in blog post, options: top, bottom, both, none
+}
+
+export const LogoTitle: LOGO_TITLE = {
+  content: {
+    uk: 'Jane School',
+    en: 'Jane School',
+    ru: 'Jane School'
+  }
 }
 
 // Global
@@ -134,52 +142,36 @@ export const SEARCH: PageSEO = {
 
 export const LINKS: Links = [
   {
-    TEXT: {
+    title: {
       uk: 'Home',
       en: 'Home',
-      ru: 'Home',
-      de: 'Home',
-      es: 'Home',
-      fr: 'Home',
-      pl: 'Home'
+      ru: 'Home'
     },
-    HREF: '/'
+    path: '/'
   },
   {
-    TEXT: {
+    title: {
       uk: 'Work',
       en: 'Work',
-      ru: 'Work',
-      de: 'Work',
-      es: 'Work',
-      fr: 'Work',
-      pl: 'Work'
+      ru: 'Work'
     },
-    HREF: '/work'
+    path: '/work'
   },
   {
-    TEXT: {
+    title: {
       uk: 'Blog',
       en: 'Blog',
-      ru: 'Blog',
-      de: 'Blog',
-      es: 'Blog',
-      fr: 'Blog',
-      pl: 'Blog'
+      ru: 'Blog'
     },
-    HREF: '/blog'
+    path: '/blog'
   },
   {
-    TEXT: {
+    title: {
       uk: 'Projects',
       en: 'Projects',
-      ru: 'Projects',
-      de: 'Projects',
-      es: 'Projects',
-      fr: 'Projects',
-      pl: 'Projects'
+      ru: 'Projects'
     },
-    HREF: '/projects'
+    path: '/projects'
   }
 ]
 

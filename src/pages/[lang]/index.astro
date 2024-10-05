@@ -1,8 +1,12 @@
 ---
-
+import { fade } from 'astro:transitions'
+import FooterSection from '@/components/Footer.astro'
+import SpotlightSection from '@/components/SpotlightSection.astro'
+import Education from '@/components/content/education.astro'
+import SectionWithImage from '@/components/content/section-with-image.astro'
+import { getLocale } from '@/i18n/config'
 import { LANGUAGES_ARRAY, getLangFromUrl, useTranslations } from '@/i18n/config'
 import Layout from '@/layouts/Layout.astro'
-import { getPosts } from '@/lib'
 
 export const getStaticPaths = () => {
   return LANGUAGES_ARRAY.map((lang) => ({
@@ -10,23 +14,13 @@ export const getStaticPaths = () => {
   }))
 }
 
-import { fade } from 'astro:transitions'
-import { getLocale } from '@/i18n/utils'
-
 const locale = getLocale(Astro)
 export type Locale = keyof typeof locale
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
-const MAX_POSTS = 5 // max number of posts to show on the home page
-const posts = await getPosts(lang, MAX_POSTS)
 export const prerender = true
 ---
 
-<Layout
-	title={t('site-title')}
-	description={t('site-description')}
-	lang={locale}
-	transition:animate={fade({ duration: '0.4s' })}
->
-
+<Layout title={t('site-title')} description={t('site-description')} lang={locale} transition:animate={fade({ duration: '0.4s' })}>
+  <SpotlightSection />
 </Layout>

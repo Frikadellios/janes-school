@@ -40,7 +40,7 @@ export const BackgroundDots: React.FC<DotPatternBackgroundProps> = ({
 
   return (
     <div
-      className={`absolute reletative -z-50 inset-0 h-full w-full ${className}`}
+      className={`absolute reletative -z-50 inset-0 h-auto w-auto ${className}`}
       style={backgroundStyle}
       {...props}
     />

@@ -7,6 +7,23 @@ export type PageSEO = {
   }
 }
 
+export type LOGO_TITLE = {
+  content: {
+    [key: string]: string
+  }
+}
+
+export type PROJECTS = {
+  name: {
+    [key: string]: string
+  }
+  description: {
+    [key: string]: string
+  }
+  image: string
+  url: string
+}
+
 export type CATEGORIES = {
   TITLE: {
     [key: string]: string
@@ -21,10 +38,10 @@ export interface Site extends PageSEO {
 }
 
 export type Links = {
-  TEXT: {
+  title: {
     [key: string]: string
   }
-  HREF: string
+  path: string
 }[]
 
 export type TECHNOLOGIES = {

@@ -179,6 +179,16 @@ export const stats = [
   }
 ]
 
+export const LogoTitle = [
+  {
+    content: {
+      uk: 'Jane School',
+      en: 'Jane School',
+      ru: 'Jane School'
+    }
+  }
+]
+
 // Translation Completed
 export const include = [
   {
@@ -733,7 +743,7 @@ export const features = [
 // Translation Completed
 export const navLinks = [
   {
-    label: {
+    title: {
       uk: 'Обслуговування свердловин',
       en: 'Resume',
       ru: 'Обслуживание скважин',
@@ -742,10 +752,10 @@ export const navLinks = [
       es: 'Обслуживание скважин',
       pl: 'resume'
     },
-    link: '/resume'
+    path: '/resume'
   },
   {
-    label: {
+    title: {
       uk: 'Облаштування свердловин',
       en: 'Pricing',
       ru: 'Обустройство скважин',
@@ -754,10 +764,10 @@ export const navLinks = [
       es: 'Обустройство скважин',
       pl: 'pricing'
     },
-    link: '/pricing'
+    path: '/pricing'
   },
   {
-    label: {
+    title: {
       uk: 'Ремонт насосів',
       en: 'Services',
       ru: 'Ремонт насосов',
@@ -766,10 +776,10 @@ export const navLinks = [
       es: 'Ремонт насосов',
       pl: 'portfolio'
     },
-    link: '/services'
+    path: '/services'
   },
   {
-    label: {
+    title: {
       uk: 'Автономна каналізація',
       en: 'Booking',
       ru: 'Автономная канализация',
@@ -778,10 +788,10 @@ export const navLinks = [
       es: 'Автономная канализация',
       pl: 'work'
     },
-    link: '/booking'
+    path: '/booking'
   },
   {
-    label: {
+    title: {
       uk: 'Блог',
       en: 'Blog',
       ru: 'Блог',
@@ -790,10 +800,10 @@ export const navLinks = [
       es: 'Блог',
       pl: 'blog'
     },
-    link: '/blog'
+    path: '/blog'
   },
   {
-    label: {
+    title: {
       uk: 'Контакти',
       en: 'Contacts',
       ru: 'Контакты',
@@ -802,7 +812,7 @@ export const navLinks = [
       es: 'Контакты',
       pl: 'Contacts'
     },
-    link: '/contacts'
+    path: '/contacts'
   }
 ]
 

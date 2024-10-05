@@ -1,15 +1,18 @@
 ---
-import { LANGUAGES, LOCALES, type Lang } from '@/i18n/config'
+import { LANGUAGES, type Lang } from '@/i18n/config'
+
 const url = Astro.url
 const origin = url.origin
 const [, lang, ...slug] = url.pathname.split('/')
 ---
 
+
+
 <!-- OPTION 01 -->{
   lang in LANGUAGES && (
     <select
       id="lang-selector"
-      class="bg-background text-foreground rounded-lg px-3 py-1.5"
+      class="bg-background border-trancperent text-foreground"
     >
       <option value="" disabled selected>
         {LANGUAGES[lang as Lang]}

@@ -1,6 +1,5 @@
 // biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 import { toString } from 'mdast-util-to-string'
-// src/lib/readTime.ts
 import { calculateReadingTime } from './calculateReadingTime'
 
 export function remarkReadingTime() {

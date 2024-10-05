@@ -1,0 +1,15 @@
+---
+
+export interface Props {
+  content: {
+    [key: string]: string
+  }
+  lang?: string
+}
+
+const { content } = Astro.props
+---
+
+<h1 class="animate-textGradient bg-gradient-to-r from-primary via-neon-cyan to-primary-my bg-clip-text text-3xl font-semibold text-transparent">
+      {content}
+</h1>

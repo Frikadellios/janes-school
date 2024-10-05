@@ -1,9 +1,4 @@
 ---
-import BaseHead from '@/components/BaseHead.astro'
-import TailwindIndicator from '@/components/layout/tailwind-indicator.astro'
-import { cn } from '@/lib/utils'
-import ViewTransitions from 'astro/components/ViewTransitions.astro'
-
 type Props = {
   title: string
   description?: string
@@ -12,39 +7,25 @@ type Props = {
   bodyClass?: string
 }
 
-import I18NHeader from '@/components/layout/I18nHeaders.astro'
-import ProviderAnimations from '@/components/layout/provider-animations.astro'
-import { SITE } from '@/consts'
-import { getLangFromUrl, getLocale, useTranslations } from '@/i18n/utils'
+
+import Footer from '@/components/Footer.astro'
+import Container from '@/components/layout/container.astro'
+import NavigationSection from '@/components/react/navigation'
+import { getLangFromUrl, getLocale, useTranslations } from '@/i18n/config'
+import MainLayout from './main-layout.astro'
+
 
 const locale = getLocale(Astro)
 export type Locale = keyof typeof locale
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
-const { title, description, mainClass, bodyClass } = Astro.props as Props
+const { title, description  } = Astro.props as Props
 ---
 
-<!doctype html>
-<html lang={locale}>
-	<head>
-		<BaseHead
-			title={`${title} | ${SITE.TITLE[lang]}`}
-			description={`${description} | ${SITE.DESCRIPTION[lang]}`}
-			lang={locale}
-		/>
-		<ProviderAnimations />
-		<I18NHeader />
-    <ViewTransitions />
-	</head>
-	<body class={cn('flex page bg-background text-foreground antialiased min-h-screen', bodyClass)}>
-			<main class={cn(mainClass)}>
-				<slot />
-				<TailwindIndicator />
-			</main>
-      <style is:global>
-			img {
-				content-visibility: auto;
-			}
-		</style>
-	</body>
-</html>
+<MainLayout title={title} description={description} lang={locale}>
+  <NavigationSection client:load />
+  <Container >
+    <slot />
+  </Container>
+  <Footer />
+</MainLayout>

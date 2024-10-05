@@ -1,4 +1,4 @@
-import { getLocale, getLocaleFromCookie, getLocaleFromUrl, getPreferredLocale } from '@/i18n/utils'
+import { getLocale, getLocaleFromCookie, getLocaleFromUrl, getPreferredLocale } from '@/i18n/config'
 import { CookieKeys, clearCookies, setCookies, setLocaleCookie } from '@/utils/cookies'
 import { Routes } from '@/utils/routes'
 import { defineMiddleware, sequence } from 'astro/middleware'

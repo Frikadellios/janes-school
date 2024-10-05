@@ -1,0 +1,25 @@
+---
+import TailwindIndicator from '@/components/layout/tailwind-indicator.astro'
+import { cn } from '@/lib/utils'
+import BaseLayout from './base-layout.astro'
+type Props = {
+  title: string
+  description?: string
+  lang?: string
+  mainClass?: string
+}
+import '@/styles/app.css'
+const { title, description, mainClass } = Astro.props as Props
+---
+
+<BaseLayout title={title} description={description}>
+  <main class={cn(mainClass)}>
+				<slot />
+				<TailwindIndicator />
+		</main>
+      <style is:global>
+			img {
+				content-visibility: auto;
+			}
+		</style>
+</BaseLayout>

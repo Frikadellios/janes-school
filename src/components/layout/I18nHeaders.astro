@@ -1,12 +1,12 @@
 ---
-import { DEFAULT_LANGUAGE, LOCALES } from '@/i18n/config'
+import { DEFAULT_LOCALE, LOCALES } from '@/i18n/config'
 
 const [, , ...path] = Astro.url.pathname.split('/')
 ---
 
 <link
   rel="alternate"
-  href={`${Astro.url.origin}${DEFAULT_LANGUAGE}/${path.join("/")}`}
+  href={`${Astro.url.origin}${DEFAULT_LOCALE}/${path.join("/")}`}
   hreflang="x-default"
 />
 {
@@ -19,10 +19,10 @@ const [, , ...path] = Astro.url.pathname.split('/')
   ))
 }
 
-<meta property="og:locale" content={LOCALES[DEFAULT_LANGUAGE]} />
+<meta property="og:locale" content={LOCALES[DEFAULT_LOCALE]} />
 {
   Object.keys(LOCALES).map((l) => {
-    if (l === DEFAULT_LANGUAGE) return
+    if (l === DEFAULT_LOCALE) return
     return (
       <meta
         property="og:locale:alternate"

@@ -1,0 +1,355 @@
+@import "tailwindcss";
+
+@import './prose.css';
+@plugin "../../plugins/plugin.js";
+
+@theme {
+  --font-family-display: "Inter, sans-serif";
+  --breakpoint-3xl: 1920px;
+
+  --foreground-rgb: oklch(98.3% 0.004 316.6);
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --color-primary-my: oklch(89.33% 0.17190800551761173 165.35314232524098);
+  --color-background-my: oklch(18.67% 0 0);
+  --color-secondary-my: oklch(73.46% 0.185 152.73);
+
+  --color-background-card: oklch(14.08% 0.004 285.82);
+  --color-neon-yellow: oklch(94.44% 0.194 106.75);
+  --color-neon-pink: oklch(71.7% 0.25 360);
+  --color-neon-lime: oklch(91.5% 0.258 129);
+  --color-neon-cyan: oklch(91.3% 0.139 195.8);
+  --color-emerald-green: oklch(69.59% 0.149 162.48);
+  --color--overlay-blurple: oklch(91.3% 0.139 195.8);
+  --overlay-plurple: oklch(59.17% 0.218 0.53 / 0.33);
+  --overlay-blurple: oklch(59.17% 0.218 0.53 / 10%);
+  --color-green: oklch(0.5 0.207 156.57);
+  --color-black: oklch(0% 0 0);
+  --color-white: oklch(100% 0 0);
+  --color-chiter: oklch(23.57% 0.008 274.61);
+  --color-foreground-elements: oklch(82.72% 0.105 227.99);
+  /* Shadcn - purple-black */
+  --color-background: oklch(10.69% 0.019 318.2);
+  --color-foreground: oklch(92.19% 0.003 348.18);
+  --color-muted: oklch(25.96% 0.051 324.12);
+  --color-muted-foreground: oklch(67.64% 0.014 348.63);
+  --color-popover: oklch(10.69% 0.019 318.2);
+  --color-popover-foreground: oklch(92.19% 0.003 348.18);
+  --color-card: oklch(14.08% 0.004 285.82);
+  --color-card-foreground: oklch(92.19% 0.003 348.18);
+  --color-primary: oklch(59.17% 0.218 0.53);
+  --color-primary-foreground: oklch(100% 3.5594404384177905e-8 106.37411429114086);
+  --color-secondary: oklch(22.83% 0.024 316.3);
+  --color-secondary-foreground: oklch(100% 3.5594404384177905e-8 106.37411429114086);
+  --color-accent: oklch(25.96% 0.051 324.12);
+  --color-accent-foreground: oklch(92.19% 0.003 348.18);
+  --color-destructive: oklch(42.89% 0.17589976096668844 29.233885192342644);
+  --color-destructive-foreground: oklch(92.19% 0.003 348.18);
+  --muted-foreground: oklch(71.19% 0.013 286.07);
+
+  --color-border: oklch(28.52% 0.046 352.26);
+
+  --color-input: oklch(28.52% 0.046 352.26);
+  --color-ring: oklch(59.17% 0.218 0.53);
+  --color-chart-1: oklch(52.92% 0.193 262.13);
+  --color-chart-2: oklch(69.83% 0.134 165.46);
+  --color-chart-3: oklch(72.32% 0.15 60.63);
+  --color-chart-4: oklch(61.92% 0.204 312.73);
+  --color-chart-5: oklch(61.23% 0.209 6.39);
+
+  --border-radius-lg: 0.5rem;
+  --border-radius-md: calc(var(--border-radius-lg) - 0.5px);
+  --border-radius-sm: calc(var(--border-radius-md) - 0.5px);
+  --ds-shadow-border: 0 0 0 1px hsla(0, 0%, 100%, 0.145);
+
+  --animate-border: border 4s linear infinite;
+  --animate-accordion-down: accordion-down 200ms ease-in-out;
+  --animate-accordion-up: accordion-up 200ms ease-in-out;
+  --animate-move: move 5s linear infinite;
+  --animate-spotlight: spotlight 2s ease .75s 1 forwards;
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --animate-textGradient: textGradient 5s ease infinite;
+
+}
+
+@layer base {
+
+  html {
+    font-family: system-ui, sans-serif;
+    font-size: var(--font-size-base);
+  }
+
+  img {
+    content-visibility: auto;
+  }
+
+.hero > img {
+  animation: vert-move 3s ease-in-out infinite;
+  border-radius: 9999px;
+}
+
+  header {
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.border {
+  border-color: oklch(35.6% 0.174 312.18 / 25%);
+}
+
+  body {
+    transition: background-color 0.5s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+   .hero > img {
+    animation: vert-move 3s ease-in-out infinite;
+    border-radius: 9999px;
+  }
+
+  header {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  .border {
+    border-color: oklch(28.52% 0.046 352.26);
+  }
+
+   .page {
+    background:
+      linear-gradient(215deg, var(--overlay-blurple), transparent 40%),
+      radial-gradient(var(--overlay-blurple), transparent 40%) no-repeat -60vw -40vh /
+      105vw 200vh,
+      radial-gradient(var(--overlay-blurple), transparent 65%) no-repeat 50%
+      calc(100% + 20rem) / 60rem 30rem;
+  }
+
+
+
+}
+
+
+
+
+  @font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/inter.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .prose code {
+            @apply text-base;
+          }
+
+
+        h1 {
+          @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ;
+        }
+
+        h2 {
+          @apply mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 ;
+        }
+
+        h3 {
+         @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight ;
+        }
+
+        h4 {
+          @apply scroll-m-20 text-xl font-semibold tracking-tight ;
+        }
+
+        p {
+          @apply text-sm font-bold leading-6 [&:not(:first-child)]:mt-6
+        }
+
+        .balance-text {
+          text-wrap: balance;
+        }
+
+      .site-title:hover {
+        @apply opacity-75 ;
+      }
+
+      :not(pre) > code {
+        @apply relative rounded border bg-background px-[0.3rem] py-[0.2rem] font-mono text-sm text-foreground;
+      }
+
+  .header {
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    align-items: center;
+  }
+
+  .text-color {
+    animation: animate8345 9s linear infinite;
+    background: linear-gradient(to right, #2d60ec, #3ccfda);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+
+@property --tw-outline-style {
+  syntax: "<custom-ident>";
+  inherits: false;
+  initial-value: solid;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+}
+
+@keyframes textGradient {
+  0%,
+  100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+@keyframes accordion-down {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  0% {
+    height: var(--radix-accordion-content-height);
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate8345 {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes vert-move {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@property --tw-outline-style {
+  syntax: "<custom-ident>";
+  inherits: false;
+  initial-value: solid;
+}

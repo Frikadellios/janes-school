@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets'
+
+import PhotoMy from '@/assets/odessa-2023.jpg'
+---
+
+
+      <section class="gap-2 text-center bg-background/10 relative rounded-lg p-5">
+        <h1 class="scroll-m-20 text-center text-color text-4xl font-extrabold tracking-tight lg:text-5xl">Hi there</h1>
+        <figure class="relative h-[80vh] ">
+          <Image
+          src={PhotoMy}
+           alt=""
+            class="w-auto h-auto object-cover aspect-square"
+            style={{
+              maskImage:
+                "./public/splash.svg",
+              maskSize: 'cover',
+              maskRepeat: 'no-repeat',
+              maskPosition: 'center',
+            }}
+
+          />
+        </figure>
+      </section>
+

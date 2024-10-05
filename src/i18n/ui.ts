@@ -1,22 +1,12 @@
-export const Languages = {
-  en: {
-    route: '/en/',
-    icon: 'en'
-  },
-  uk: {
-    route: '/uk/',
-    icon: 'uk'
-  },
-  ru: {
-    route: '/ru/',
-    icon: 'ru'
-  }
-}
-
-export const defaultLang = 'uk'
-
 export const ui = {
   en: {
+    'nav.components': 'Components',
+    'nav.faq': 'faq',
+    'nav.contact': 'contact',
+    'nav.blog': 'blog',
+    'footer.copyright': 'All rights reserved.',
+    'footer.createdBy': 'Created by',
+    'footer.createdBy2': 'from Ukraine.',
     '404-title': '404 title',
     '404-description': '404 description',
     'category-one': 'Category One',
@@ -77,6 +67,13 @@ export const ui = {
     'toast-shop-cta': 'Shop'
   },
   ru: {
+    'nav.components': 'Components',
+    'nav.faq': 'faq',
+    'nav.contact': 'contact',
+    'nav.blog': 'blog',
+    'footer.copyright': 'All rights reserved.',
+    'footer.createdBy': 'Created by',
+    'footer.createdBy2': 'from Ukraine.',
     '404-title': '404 title',
     '404-description': '404 description',
     'category-one': 'Category One',
@@ -137,6 +134,13 @@ export const ui = {
     'toast-shop-cta': 'Shop'
   },
   uk: {
+    'nav.components': 'Components',
+    'nav.faq': 'faq',
+    'nav.contact': 'contact',
+    'nav.blog': 'blog',
+    'footer.copyright': 'All rights reserved.',
+    'footer.createdBy': 'Created by',
+    'footer.createdBy2': 'from Ukraine.',
     '404-title': '404 title',
     '404-description': '404 description',
     'category-one': 'Category One',

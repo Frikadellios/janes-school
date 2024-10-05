@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Email.ML",
+    "description": "Minimalist temporary Email.",
+    "image": "/assets/images/logo.webp",
+    "url": "https://email.ml"
+  },
+  {
+    "name": "DNS.Surf",
+    "description": "Querying DNS Resolution Results in Different Regions Worldwide.",
+    "image": "/assets/images/logo.webp",
+    "url": "https://dns.surf"
+  },
+  {
+    "name": "DNS.Surf",
+    "description": "Querying DNS Resolution Results in Different Regions Worldwide.",
+    "image": "/assets/images/logo.webp",
+    "url": "https://dns.surf"
+  },
+  {
+    "name": "HTML.ZONE",
+    "description": "Web Toolbox.",
+    "image": "/assets/images/logo.webp",
+    "url": "https://html.zone"
+  }
+]

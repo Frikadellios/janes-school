@@ -1,10 +1,11 @@
-import { defineConfig, passthroughImageService, sharpImageService } from 'astro/config'
+import alpine from '@astrojs/alpinejs'
 import cloudflare from '@astrojs/cloudflare'
 import mdx from '@astrojs/mdx'
 import partytown from '@astrojs/partytown'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import robotsTxt from 'astro-robots-txt'
+import { defineConfig, passthroughImageService } from 'astro/config'
 import AutoImport from 'unplugin-auto-import/astro'
 
 import { baseLocale, locales } from './src/i18n/i18n-util.ts'
@@ -12,15 +13,14 @@ import { remarkReadingTime } from './src/lib/readTime.ts'
 import { SITE } from './src/site-config.ts'
 const sitemapLocales = Object.fromEntries(locales.map((_, i) => [locales[i], locales[i]])) // Create an object with keys and values based on locales
 
-
-
-import lightningcss from 'vite-plugin-lightningcss'
 import postCssOklabPolyfill from '@csstools/postcss-oklab-function'
 import tailwindcss from '@tailwindcss/vite'
 import cssDiscardComments from 'postcss-discard-comments'
 import rehypeExternalLinks from 'rehype-external-links'
 import handlebars from 'vite-plugin-handlebars'
+import lightningcss from 'vite-plugin-lightningcss'
 
+import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
@@ -63,7 +63,8 @@ export default defineConfig({
       }
     }
   },
-  output: 'server',
+  image: { service: passthroughImageService() },
+  output: 'hybrid',
   adapter: cloudflare({
     imageService: 'cloudflare',
     functionPerRoute: true,
@@ -73,9 +74,6 @@ export default defineConfig({
   }),
   prefetch: {
     prefetchAll: true
-  },
-  image: {
-    service: passthroughImageService()
   },
   markdown: {
     rehypePlugins: [
@@ -106,8 +104,15 @@ export default defineConfig({
       dirs: ['./src/utils/*.ts', './src/hooks'],
       dts: '.astro/auto-imports.d.ts'
     }),
+    alpine({ entrypoint: '/src/entrypoint' }),
     react(),
-    mdx(),
+    mdx({
+      syntaxHighlight: 'shiki',
+      shikiConfig: {
+        theme: 'github-dark-dimmed'
+      },
+      gfm: true
+    }),
     sitemap({
       entryLimit: 10000,
       i18n: {
@@ -125,6 +130,7 @@ export default defineConfig({
         forward: ['dataLayer.push'],
         debug: false
       }
-    })
+    }),
+    icon()
   ]
 })

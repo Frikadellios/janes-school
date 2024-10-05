@@ -3,12 +3,12 @@ import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 import FormattedDate from '@/components/FormattedDate.astro'
 import Tag from '@/components/Tag.astro'
-import BaseLayout from '@/layouts/BaseLayout.astro'
+import BaseLayout from '@/layouts/base-blog.astro'
 import type { MarkdownHeading } from 'astro'
 
 type Props = {
-  id: CollectionEntry<'blog'>['id']
-  data: CollectionEntry<'blog'>['data']
+  id: CollectionEntry<'post'>['id']
+  data: CollectionEntry<'post'>['data']
   headings: MarkdownHeading[]
   readTime: string
   lang?: string
@@ -20,7 +20,7 @@ const { title, description, pubDate, heroImage, tags } = data
 const articleDate = pubDate.toISOString()
 
 import { getLangFromUrl, useTranslations } from '@/i18n/config'
-import { getLocale } from '@/i18n/utils'
+import { getLocale } from '@/i18n/config'
 
 const locale = getLocale(Astro)
 export type Locale = keyof typeof locale

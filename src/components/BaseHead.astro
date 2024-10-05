@@ -1,20 +1,22 @@
 ---
-import I18NHeader from '@/components/layout/I18nHeaders.astro'
-import { getLocalizedPathname, pathNameIsInLanguage } from '@/i18n/config'
-import { defaultLang } from '@/i18n/ui'
+
 import { siteConfig } from '@/site-config'
-import '@/styles/globals.css'
+import '@/styles/app.css'
+import '@/styles/prose.css'
+import '@/styles/scrollbar.css'
+
 import { ViewTransitions } from 'astro:transitions'
 
 export interface Props {
-	title: string
-	description?: string
-	ogImage?: string | undefined
-	articleDate?: string | undefined
-	lang?: string
+  title: string
+  description?: string
+  image?: string
+  ogImage?: string | undefined
+  articleDate?: string | undefined
+  lang?: string
 }
 
-const { title, description = siteConfig.description, ogImage, articleDate } = Astro.props
+const { title, description = siteConfig.description, ogImage, image = '/favicon.ico', articleDate } = Astro.props
 
 const socialImageURL = new URL(ogImage ? ogImage : './og-pink.webp', Astro.url).href
 
@@ -22,10 +24,20 @@ const titleSeparator = '•'
 
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 
-const canonicalPathname = pathNameIsInLanguage(Astro.url.pathname, defaultLang)
-	? Astro.url.pathname
-	: getLocalizedPathname(Astro.url.pathname, defaultLang)
+import { DEFAULT_LOCALE, LOCALES, getLocalizedPathname, pathNameIsInLanguage } from '@/i18n/config'
+
+const canonicalPathname = pathNameIsInLanguage(Astro.url.pathname, DEFAULT_LOCALE)
+  ? Astro.url.pathname
+  : getLocalizedPathname(Astro.url.pathname, DEFAULT_LOCALE)
 const canonicalURL = new URL(canonicalPathname, Astro.site)
+
+const alternateLang = Object.keys(LOCALES)
+const alternateLinks = alternateLang.map((lang: string) => {
+  return {
+    href: new URL(getLocalizedPathname(Astro.url.pathname, lang), Astro.site),
+    hreflang: lang
+  }
+})
 ---
 
 <!-- Global Metadata -->
@@ -36,30 +48,46 @@ const canonicalURL = new URL(canonicalPathname, Astro.site)
 <meta name="generator" content={Astro.generator} />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
 
 <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
 
 <!-- Font preloads -->
 <link rel="preload" href="./src/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
 
-<!-- Alternate URLs -->
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
-<I18NHeader>
-	<!-- Canonical URL -->
+<!-- Alternate URLs -->
+{
+  alternateLinks.map(({ href, hreflang }) => (
+    <link rel="alternate" href={href} hreflang={hreflang} />
+  ))
+}
 
-	<!-- Primary Meta Tags -->
-	<title>{siteTitle}</title>
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 	<!-- SEO -->
-	<meta name="title" content={siteTitle} />
-	<meta name="description" content={description} />
-	<meta name="author" content={siteConfig.author} />
+<meta name="title" content={siteTitle} />
+<meta name="description" content={description} />
+<meta name="author" content={siteConfig.author} />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content={articleDate ? 'article' : 'website'} />
@@ -97,10 +125,32 @@ const canonicalURL = new URL(canonicalPathname, Astro.site)
 	<!-- RSS Feed -->
 	<link rel="alternate" type="application/rss+xml" title={title} href={`${Astro.site}rss.xml`} />
 
+<script is:inline defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+
 	<!-- Global Scripts -->
 	<script is:inline src="/js/theme.js"></script>
 	<script is:inline src="/js/scroll.js"></script>
 	<script is:inline src="/js/animate.js"></script>
+
+
+  <script>
+		import { animate } from 'motion'
+		const showAnimations = localStorage.getItem('animations') === 'true'
+
+		if (showAnimations) {
+			animate(
+				'.title',
+				{ y: [80, 0], opacity: [0, 1] },
+				{
+					duration: 2.5,
+					opacity: { duration: 3 },
+
+					offset: [0, 0.55, 0.75]
+				}
+			)
+		}
+	</script>
+
 
 	<!-- <ViewTransitions  /> -->
 
@@ -116,4 +166,3 @@ const canonicalURL = new URL(canonicalPathname, Astro.site)
 	</script>
 
 	<ViewTransitions />
-</I18NHeader>

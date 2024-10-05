@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content'
+import BlogPostImage from '@/components/BlogPostImage.astro'
+import { LOCALES, getLangFromUrl } from '@/i18n/config'
+import Layout from '@/layouts/Layout.astro'
+import { calculateReadingTime } from '@/lib/calculateReadingTime'
+
+export const prerender = true
+export async function getStaticPaths() {
+  return Object.keys(LOCALES).map((lang) => {
+    return { params: { lang } }
+  })
+}
+
+const lang = getLangFromUrl(Astro.url)
+const blogPosts = await getCollection('post', ({ data }) => {
+  return data.lang === lang
+})
+
+const { title, description, pubDate, dateFormat, category, cover, image } = Astro.props
+---
+
+<Layout title={`Blog`} lang={lang}>
+  <main class="container mx-auto">
+    <h1>Blog</h1>
+    <ul>
+      {
+        blogPosts.map((p) => (
+          <li>
+            <a class="link flex justify-between items-center" href={p.slug}>
+              <div class="mb-5">
+					        <BlogPostImage imagePath={cover} altText={`${title}`} />
+				      </div>
+              <span>{p.data.title}</span>
+              <div class="hidden md:block">
+                <span>
+                  {calculateReadingTime(p.body)} min - {p.data.dateFormatted}
+                </span>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
