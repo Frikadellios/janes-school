@@ -54,11 +54,12 @@ content:
   - label: Translate
     path: src/i18n/ui.ts
     name: ui
-    type: file
+    type: collection
   - name: authors
     label: Authors
-    path: src/content/author/*.json
+    path: src/content/author
     type: file
+    filename: "{primary}.json"
     view:
       fields: [ firstname, lastname, nickname, apdi, email ]
     fields:
