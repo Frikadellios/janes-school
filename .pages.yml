@@ -23,6 +23,7 @@ content:
       - { name: tags, label: Tags, type: string, list: true }
       - { name: featured, label: Featured, type: boolean }
       - { name: draft, label: Draft, type: boolean }
+      - { name: body, label: Body, type: rich-text, options: { input: src/assets, output: ../../../assets } }
       - { name: entries,
           label: Entries,
           type: object,
