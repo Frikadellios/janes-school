@@ -6,6 +6,7 @@ content:
     label: Posts
     type: collection
     path: src/content/post
+    filename: "{primary}.mdx"
     view:
       fields: [ title, draft, date, image ]
     fields:
