@@ -20,7 +20,16 @@ content:
       - { name: slug, label: Slug, type: string }
       - { name: featured, label: Featured, type: boolean }
       - { name: draft, label: Draft, type: boolean }
-      - { name: tags, label: Tags, type: select }
+      - { name: entries,
+          label: Entries,
+          type: object,
+          list: true,
+          fields: [
+              { name: title, label: Title, type: string },
+              { name: description, label: Description, type: string },
+              { name: icon, label: Icon, type: string },
+              { name: pro, label: Pro, type: boolean },
+              { name: soon, label: Soon, type: boolean }]}
   - label: Costants
     path: src/constants/index.ts
     name: consts
