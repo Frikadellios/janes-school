@@ -57,7 +57,7 @@ content:
     type: file
   - name: authors
     label: Authors
-    path: src/content/author/author.json
+    path: src/content/author/"{primary}.json"
     type: file
     view:
       fields: [ firstname, lastname, nickname, apdi, email ]
