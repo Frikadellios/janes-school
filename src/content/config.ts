@@ -48,7 +48,7 @@ const authorsCollection = defineCollection({
   type: 'data',
   schema: z.object({
     firstname: z.string(),
-		lastname: z.string(),
+    lastname: z.string(),
     nikname: z.string().optional(),
     apdi: z.string().optional(),
     photo: z.object({
@@ -131,7 +131,6 @@ const tagsCollection = defineCollection({
   })
 })
 
-
 const lvlCollection = defineCollection({
   type: 'data',
   schema: z.object({
@@ -154,7 +153,7 @@ const clientsCollection = defineCollection({
     state: z.string().min(1, 'State is required'),
     zip: z.string().min(1, 'Zip is required'),
     lvl: reference('lvl').optional(),
-    lang: z.enum(['en', 'uk', 'ru']).optional(),
+    lang: z.enum(['en', 'uk', 'ru']).optional()
   })
 })
 
@@ -166,7 +165,7 @@ export const collections = {
   lvl: lvlCollection,
   category: categoriesCollection,
   clients: clientsCollection,
-  tags: tagsCollection,
+  tags: tagsCollection
 }
 
 await astroZodCollectionsToJsonSchemas(collections)

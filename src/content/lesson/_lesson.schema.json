@@ -29,10 +29,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "id",
-              "collection"
-            ],
+            "required": ["id", "collection"],
             "additionalProperties": false
           },
           {
@@ -45,10 +42,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "slug",
-              "collection"
-            ],
+            "required": ["slug", "collection"],
             "additionalProperties": false
           }
         ]
@@ -59,9 +53,7 @@
       "items": {
         "type": "string"
       },
-      "default": [
-        "education"
-      ]
+      "default": ["education"]
     },
     "cource": {
       "anyOf": [
@@ -78,10 +70,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "id",
-            "collection"
-          ],
+          "required": ["id", "collection"],
           "additionalProperties": false
         },
         {
@@ -94,10 +83,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "slug",
-            "collection"
-          ],
+          "required": ["slug", "collection"],
           "additionalProperties": false
         }
       ]
@@ -117,10 +103,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "id",
-            "collection"
-          ],
+          "required": ["id", "collection"],
           "additionalProperties": false
         },
         {
@@ -133,31 +116,17 @@
               "type": "string"
             }
           },
-          "required": [
-            "slug",
-            "collection"
-          ],
+          "required": ["slug", "collection"],
           "additionalProperties": false
         }
       ]
     },
     "lang": {
       "type": "string",
-      "enum": [
-        "en",
-        "uk",
-        "ru"
-      ]
+      "enum": ["en", "uk", "ru"]
     }
   },
-  "required": [
-    "id",
-    "title",
-    "description",
-    "category",
-    "lvl",
-    "lang"
-  ],
+  "required": ["id", "title", "description", "category", "lvl", "lang"],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }

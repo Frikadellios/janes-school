@@ -35,34 +35,17 @@
             },
             "format": {
               "type": "string",
-              "enum": [
-                "png",
-                "jpg",
-                "jpeg",
-                "tiff",
-                "webp",
-                "gif",
-                "svg",
-                "avif"
-              ]
+              "enum": ["png", "jpg", "jpeg", "tiff", "webp", "gif", "svg", "avif"]
             }
           },
-          "required": [
-            "src",
-            "width",
-            "height",
-            "format"
-          ],
+          "required": ["src", "width", "height", "format"],
           "additionalProperties": false
         },
         "alt": {
           "type": "string"
         }
       },
-      "required": [
-        "src",
-        "alt"
-      ],
+      "required": ["src", "alt"],
       "additionalProperties": false
     },
     "category": {
@@ -82,10 +65,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "id",
-              "collection"
-            ],
+            "required": ["id", "collection"],
             "additionalProperties": false
           },
           {
@@ -98,10 +78,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "slug",
-              "collection"
-            ],
+            "required": ["slug", "collection"],
             "additionalProperties": false
           }
         ]
@@ -124,10 +101,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "id",
-              "collection"
-            ],
+            "required": ["id", "collection"],
             "additionalProperties": false
           },
           {
@@ -140,10 +114,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "slug",
-              "collection"
-            ],
+            "required": ["slug", "collection"],
             "additionalProperties": false
           }
         ]
@@ -154,9 +125,7 @@
       "items": {
         "type": "string"
       },
-      "default": [
-        "education"
-      ]
+      "default": ["education"]
     },
     "relatedPosts": {
       "type": "array",
@@ -175,10 +144,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "id",
-              "collection"
-            ],
+            "required": ["id", "collection"],
             "additionalProperties": false
           },
           {
@@ -191,10 +157,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "slug",
-              "collection"
-            ],
+            "required": ["slug", "collection"],
             "additionalProperties": false
           }
         ]
@@ -216,21 +179,10 @@
     },
     "lang": {
       "type": "string",
-      "enum": [
-        "en",
-        "uk",
-        "ru"
-      ]
+      "enum": ["en", "uk", "ru"]
     }
   },
-  "required": [
-    "title",
-    "category",
-    "author",
-    "relatedPosts",
-    "dateFormatted",
-    "lang"
-  ],
+  "required": ["title", "category", "author", "relatedPosts", "dateFormatted", "lang"],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }

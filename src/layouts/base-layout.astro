@@ -3,7 +3,7 @@ import BaseHead from '@/components/BaseHead.astro'
 import I18NHeader from '@/components/layout/I18nHeaders.astro'
 import ContainerDot from '@/components/layout/containerDot.astro'
 import ProviderAnimations from '@/components/layout/provider-animations.astro'
-import { SITE } from '@/consts'
+import { siteConfig } from '@/config'
 import { getLangFromUrl, getLocale, useTranslations } from '@/i18n/config'
 import { cn } from '@/lib/utils'
 import ViewTransitions from 'astro/components/ViewTransitions.astro'
@@ -30,8 +30,8 @@ const { author, keywords, title, copyright, description, bodyClass } = Astro.pro
 <html lang={locale} dir="ltr" class="scroll-smooth">
   <head>
    <BaseHead
-			title={`${title} | ${SITE.TITLE[lang]}`}
-			description={`${description} | ${SITE.DESCRIPTION[lang]}`}
+			title={`${title} | ${siteConfig.metaTitle[lang]}`}
+			description={`${description} | ${siteConfig.metaDescription[lang]}`}
 			lang={locale}
 		/>
     {title ? <meta name="title" content={title} /> : null}

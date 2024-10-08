@@ -1,4 +1,4 @@
-import type { SupportedLocale } from '@/consts'
+import type { SupportedLocale } from '@/config'
 
 export const supportedLanguages = ['uk', 'en', 'ru']
 
@@ -7,7 +7,6 @@ export const languageNames: Record<string, string> = {
   ru: 'Русский',
   uk: 'Українська'
 }
-
 
 export function getCurrentLocale(pathname: string): SupportedLocale {
   const segments = pathname.split('/').filter(Boolean)

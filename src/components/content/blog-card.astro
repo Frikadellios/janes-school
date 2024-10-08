@@ -1,12 +1,12 @@
 ---
-import { Badge } from "@/components/ui/badge";
-import { formatDate } from "@/lib/utils";
-import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
+import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
+import { Badge } from '@/components/ui/badge'
+import { formatDate } from '@/lib/utils'
 
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<'blog'>
 
-const post = Astro.props;
+const post = Astro.props
 ---
 
 <article class="group space-y-4">

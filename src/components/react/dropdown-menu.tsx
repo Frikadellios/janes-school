@@ -1,17 +1,17 @@
 // @NOTE: in case you are using Next.js
 'use client'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-import { useAnimate, stagger, motion } from 'framer-motion'
+import { motion, stagger, useAnimate } from 'framer-motion'
 
 import {
-  LayoutGridIcon,
-  TrashIcon,
+  BellIcon,
   Building2,
-  UserCircleIcon,
-  SettingsIcon,
   ChevronRightIcon,
-  BellIcon
+  LayoutGridIcon,
+  SettingsIcon,
+  TrashIcon,
+  UserCircleIcon
 } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
@@ -61,7 +61,7 @@ export function DropdownMenu({ containerClassName, itemClassName }: DropdownMenu
   const items = [
     { icon: <UserCircleIcon size={16} />, name: 'Profile', href: '/profile' },
     { icon: <LayoutGridIcon size={16} />, name: 'Your applications', href: '/app' },
-    { icon: <Building2 size={16} />, name: 'Teams', href: '/teams'},
+    { icon: <Building2 size={16} />, name: 'Teams', href: '/teams' },
     { icon: <BellIcon size={16} />, name: 'Notifications', href: '/notifications' },
     {
       icon: <TrashIcon size={16} />,

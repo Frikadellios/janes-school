@@ -1,14 +1,48 @@
-import type socialIcons from '@assets/socialIcons'
+import type socialIcons from '@/assets/socialIcons'
 
-export type Site = {
+export type SiteConfig = {
   website: string
   author: string
-  desc: string
-  title: string
+  title?: {
+    [key: string]: string
+  }
+  description?: {
+    [key: string]: string
+  }
+  lang?: string
+  ogLocale?: string
+  metaTitle: {
+    [key: string]: string
+  }
+  metaDescription: {
+    [key: string]: string
+  }
   ogImage?: string
   lightAndDarkMode?: boolean
+  shareMessage?: {
+    [key: string]: string
+  }
+  paginationSize?: number
   postPerPage: number
   scheduledPostMargin: number
+}
+
+
+export interface Category {
+  metaTitle: {
+    [key: string]: string
+  }
+  metaDescription: {
+    [key: string]: string
+  }
+  title: {
+    [key: string]: string
+  }
+  description: {
+    [key: string]: string
+  }
+  icon: string
+  lang: string
 }
 
 export type SocialObjects = {

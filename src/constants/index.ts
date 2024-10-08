@@ -1013,7 +1013,7 @@ export const contacts = [
     label: {
       uk: 'Електронна пошта',
       en: 'Email',
-      ru: 'Електронная Почта',
+      ru: 'Електронная Почта'
     },
     link: 'mailto:info@devopsick.com',
     linkLabel: 'info@devopsick.com'
@@ -1022,7 +1022,7 @@ export const contacts = [
     label: {
       uk: 'Локація',
       en: 'Location',
-      ru: 'Локация',
+      ru: 'Локация'
     },
     link: 'https://www.google.com.ua/maps/place/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0+%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%BD%D0%B0+%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%B0,+100,+%D0%9A%D0%B8%D1%97%D0%B2,+02000/@50.3630699,30.4650846,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4c85e5edcb549:0xe3822e2551683eaa!8m2!3d50.3630665!4d30.4676595?hl=ru&entry=ttu',
     linkLabel: 'Ukraine'

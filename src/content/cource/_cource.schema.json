@@ -14,9 +14,7 @@
       "items": {
         "type": "string"
       },
-      "default": [
-        "education"
-      ]
+      "default": ["education"]
     },
     "lvl": {
       "type": "array",
@@ -35,10 +33,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "id",
-              "collection"
-            ],
+            "required": ["id", "collection"],
             "additionalProperties": false
           },
           {
@@ -51,10 +46,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "slug",
-              "collection"
-            ],
+            "required": ["slug", "collection"],
             "additionalProperties": false
           }
         ]
@@ -77,10 +69,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "id",
-              "collection"
-            ],
+            "required": ["id", "collection"],
             "additionalProperties": false
           },
           {
@@ -93,10 +82,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "slug",
-              "collection"
-            ],
+            "required": ["slug", "collection"],
             "additionalProperties": false
           }
         ]
@@ -104,19 +90,10 @@
     },
     "lang": {
       "type": "string",
-      "enum": [
-        "en",
-        "uk",
-        "ru"
-      ]
+      "enum": ["en", "uk", "ru"]
     }
   },
-  "required": [
-    "id",
-    "name",
-    "lvl",
-    "lang"
-  ],
+  "required": ["id", "name", "lvl", "lang"],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }

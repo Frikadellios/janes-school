@@ -22,10 +22,10 @@ import {
 import { useState } from 'react'
 
 // Define a type for the language keys
-type Language = 'uk' | 'en' | 'ru';
+type Language = 'uk' | 'en' | 'ru'
 
 // Ensure `lang` is of type `Language`
-const lang: Language = 'en'; // or however you determine the current language
+const lang: Language = 'en' // or however you determine the current language
 
 const navigation = [
   {

@@ -1,14 +1,14 @@
 import { getCollection } from 'astro:content'
 
 export const getCategories = async () => {
-  const posts = await getCollection('blog')
+  const posts = await getCollection('post')
   const categories = new Set(posts.map((post) => post.data.category))
   return Array.from(categories)
 }
 
 export const getPosts = async (lang: string, max?: number) => {
   return (
-    await getCollection('blog', ({ id }) => {
+    await getCollection('post', ({ id }) => {
       return id.startsWith(lang)
     })
   )
@@ -18,7 +18,7 @@ export const getPosts = async (lang: string, max?: number) => {
 }
 
 export const getTags = async (lang: string) => {
-  const posts = await getCollection('blog', ({ id }) => {
+  const posts = await getCollection('post', ({ id }) => {
     return id.startsWith(lang)
   })
   // biome-ignore lint/complexity/useFlatMap: <explanation>
@@ -27,7 +27,7 @@ export const getTags = async (lang: string) => {
 }
 
 export const getPostByTag = async (lang: string, tag: string) => {
-  const posts = await getCollection('blog', ({ id }) => {
+  const posts = await getCollection('post', ({ id }) => {
     return id.startsWith(lang)
   })
   return posts.filter((post) => post.data.tags.includes(tag))

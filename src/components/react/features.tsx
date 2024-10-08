@@ -1,4 +1,4 @@
-import { Clock, Code, Command, Feather, Palette, GraduationCap } from 'lucide-react'
+import { Clock, Code, Command, Feather, GraduationCap, Palette } from 'lucide-react'
 
 interface Feature {
   id: number

@@ -8,9 +8,8 @@ import robotsTxt from 'astro-robots-txt'
 import { defineConfig, passthroughImageService } from 'astro/config'
 import AutoImport from 'unplugin-auto-import/astro'
 
-import { baseLocale, locales } from './src/i18n/i18n-util.ts'
-import { remarkReadingTime } from './src/lib/readTime.ts'
-import { SITE } from './src/site-config.ts'
+import { baseLocale, locales } from '@/i18n/i18n-util.ts'
+import { remarkReadingTime } from '@/lib/readTime.ts'
 const sitemapLocales = Object.fromEntries(locales.map((_, i) => [locales[i], locales[i]])) // Create an object with keys and values based on locales
 
 import postCssOklabPolyfill from '@csstools/postcss-oklab-function'
@@ -20,6 +19,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 import handlebars from 'vite-plugin-handlebars'
 import lightningcss from 'vite-plugin-lightningcss'
 
+import { HOST, SITE, SITEMAP } from '@/config.ts'
 import icon from 'astro-icon'
 
 // https://astro.build/config
@@ -32,7 +32,8 @@ export default defineConfig({
     defaultLocale: baseLocale,
     locales: locales,
     routing: {
-      prefixDefaultLocale: true
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false
     }
   },
   vite: {
@@ -43,7 +44,6 @@ export default defineConfig({
     },
     server: {
       fs: {
-        // Allow serving files from hoisted root node_modules
         allow: ['../..']
       }
     },
@@ -122,8 +122,8 @@ export default defineConfig({
       }
     }),
     robotsTxt({
-      sitemap: 'https://www.janes-school.pages.dev/sitemap-0.xml',
-      host: 'janes-school.pages.dev'
+      sitemap: SITEMAP,
+      host: HOST
     }),
     partytown({
       config: {
