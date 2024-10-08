@@ -54,7 +54,7 @@ content:
   - label: Translate
     path: src/i18n/ui.ts
     name: ui
-    type: collection
+    type: file
   - name: authors
     label: Authors
     path: src/content/author
