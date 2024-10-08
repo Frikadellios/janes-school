@@ -30,6 +30,13 @@ content:
           options: 
            { input: src/assets, output: ../../../assets } 
         }
+      - {
+          name: lang,
+          label: Language,
+          type: select,
+          options:
+            { values: [ uk, ru, en ] }
+        }
       - { name: entries,
           label: Entries,
           type: object,
