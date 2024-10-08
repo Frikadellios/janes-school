@@ -59,6 +59,7 @@ content:
     label: Authors
     path: src/content/author
     type: collection
+    filename: "{primary}.json"
     view:
       fields: [ firstname, lastname, nickname, apdi, email ]
     fields:
