@@ -25,8 +25,7 @@ content:
   - name: authors
     label: Authors
     path: src/content/author
-    type: collection
-    format: json
+    type: file
     view:
       fields: [ firstname, lastname, nickname, apdi, email ]
     fields:
