@@ -1,0 +1,97 @@
+{
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lastName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "email": {
+      "type": "string",
+      "minLength": 1,
+      "format": "email"
+    },
+    "country": {
+      "type": "string",
+      "minLength": 1
+    },
+    "street": {
+      "type": "string",
+      "minLength": 1
+    },
+    "city": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "zip": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lvl": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "collection": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "collection"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string"
+            },
+            "collection": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "slug",
+            "collection"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "lang": {
+      "type": "string",
+      "enum": [
+        "en",
+        "uk",
+        "ru"
+      ]
+    }
+  },
+  "required": [
+    "firstName",
+    "lastName",
+    "email",
+    "country",
+    "street",
+    "city",
+    "state",
+    "zip"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
