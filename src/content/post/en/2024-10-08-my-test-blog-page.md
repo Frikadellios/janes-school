@@ -7,7 +7,7 @@ description: My super test blog page
 metaTitle: Tests
 metaDescription: Tests
 ogImage: Testts
-cover: //brand/svg/logo-color.svg
+cover: ../../../assets/images/logo.png
 slug: my-test-blog-page
 tags:
   - test
