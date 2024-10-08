@@ -17,6 +17,7 @@ content:
       - { name: metaTitle, label: Meta Title, type: string, required: true }
       - { name: metaDescription, label: Meta Description, type: string }
       - { name: ogImage, label: Title, type: string }
+      - { name: cover, label: Cover image, type: image }
       - { name: slug, label: Slug, type: string }
       - { name: featured, label: Featured, type: boolean }
       - { name: draft, label: Draft, type: boolean }
