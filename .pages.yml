@@ -20,6 +20,7 @@ content:
       - { name: slug, label: Slug, type: string }
       - { name: featured, label: Featured, type: boolean }
       - { name: draft, label: Draft, type: boolean }
+      - { name: tags, label: Tags, type: select }
   - label: Costants
     path: src/constants/index.ts
     name: consts
