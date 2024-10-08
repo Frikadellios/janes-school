@@ -1,4 +1,5 @@
 ---
+import { fade } from 'astro:transitions'
 type Props = {
   title: string
   description?: string
@@ -7,22 +8,20 @@ type Props = {
   bodyClass?: string
 }
 
-
 import Footer from '@/components/Footer.astro'
 import Container from '@/components/layout/container.astro'
 import NavigationSection from '@/components/react/navigation'
 import { getLangFromUrl, getLocale, useTranslations } from '@/i18n/config'
 import MainLayout from './main-layout.astro'
 
-
 const locale = getLocale(Astro)
 export type Locale = keyof typeof locale
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
-const { title, description  } = Astro.props as Props
+const { title, description } = Astro.props as Props
 ---
 
-<MainLayout title={title} description={description} lang={locale}>
+<MainLayout title={title} description={description} lang={locale} transition:animate={fade({ duration: '0.4s' })}>
   <NavigationSection client:load />
   <Container >
     <slot />

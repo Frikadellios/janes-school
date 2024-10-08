@@ -21,12 +21,45 @@ import {
 } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 
+// Define a type for the language keys
+type Language = 'uk' | 'en' | 'ru';
+
+// Ensure `lang` is of type `Language`
+const lang: Language = 'en'; // or however you determine the current language
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' }
+  {
+    name: {
+      uk: 'blog',
+      en: 'blog',
+      ru: 'blog'
+    },
+    href: '/blog'
+  },
+  {
+    name: {
+      uk: 'Services',
+      en: 'Services',
+      ru: 'Services'
+    },
+    href: '/services'
+  },
+  {
+    name: {
+      uk: 'Cources',
+      en: 'Cources',
+      ru: 'Cources'
+    },
+    href: '/cources'
+  },
+  {
+    name: {
+      uk: 'About',
+      en: 'About',
+      ru: 'About'
+    },
+    href: '/about'
+  }
 ]
 
 const actions = [{ name: 'Login', href: '/login' }]
@@ -130,11 +163,11 @@ export default function NavigationSection() {
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
               <a
-                key={item.name}
+                key={item.name[lang]}
                 href={item.href}
                 className="text-sm font-bold leading-6 duration-200 text-foreground hover:text-primary group-hover:text-primary"
               >
-                {item.name}
+                {item.name[lang]}
               </a>
             ))}
           </div>
@@ -203,11 +236,11 @@ export default function NavigationSection() {
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
                     <a
-                      key={item.name}
+                      key={item.name[lang]}
                       href={item.href}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold hover:font-black leading-7 text-foreground hover:bg-muted-foreground/10 hover:text-primary group-hover:text-primary"
                     >
-                      {item.name}
+                      {item.name[lang]}
                     </a>
                   ))}
                 </div>

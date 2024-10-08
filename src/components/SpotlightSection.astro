@@ -2,6 +2,7 @@
 import { BackgroundLines } from '@/components/ui/background-lines'
 import { type UiType, getLangFromUrl, useTranslations } from '@/i18n/config'
 import { Spotlight } from './ui/spotlight'
+
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang as UiType)
 ---
@@ -12,14 +13,18 @@ const t = useTranslations(lang as UiType)
         client:visible
       />
       <BackgroundLines className="flex items-center justify-center w-full flex-col px-4" client:visible >
-      <div class=" p-4 max-w-7xl mx-auto relative z-10  w-full pt-20 md:pt-0">
-        <h1 class="text-4xl font-extrabold tracking-tight lg:text-5xl scroll-m-20 transition-colors duration-200 tracking-tight animate-textGradient bg-gradient-to-r from-neon-lime via-primary to-neon-cyan bg-clip-text text-transparent text-center bg-clip-text bg-opacity-50">
+      <div class=" p-4 max-w-7xl text-center mx-auto relative z-10  w-full pt-20 md:pt-0">
+        <span class="inline-block border p-1 px-3 w-fit mx-auto rounded-full border-primary bg-background">
+        <h1 class="text-4xl mx-auto my-auto font-black tracking-tight lg:text-5xl scroll-m-20 transition-colors duration-200 tracking-tight animate-textGradient bg-gradient-to-r from-neon-lime via-primary to-neon-cyan bg-clip-text text-transparent text-center bg-clip-text bg-opacity-50">
                       Jane School
-        </h1>
-        <h3 class="font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-b from-primary to-neon-pink bg-opacity-50"> is the new mainstream in world trend's.</h3>
-        <p class="mt-4 transition-colors text-sm font-bold leading-6 [&:not(:first-child)]:mt-6 text-foreground max-w-lg text-center mx-auto">
+          </h1>
+
+       </span>
+         <h2 class="font-bold mt-5 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground bg-opacity-50"> is the new mainstream in world trend's.</h2>
+
+          <p class="reletative transition-colors text-sm font-bold leading-6 [&:not(:first-child)]:mt-6 text-foreground max-w-lg text-center mx-auto">
           Spotlight effect is a great way to draw attention to a specific part
-          of the page. Here, we are drawing the attention towards the text
+          of the page. Here, we are drawing the towards the text
           section of the page. I don&apos;t know why but I&apos;m running out of
           copy.
         </p>

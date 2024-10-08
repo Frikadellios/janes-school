@@ -1,5 +1,37 @@
 import { testimonial } from '@/assets/index'
 
+export const items = [
+  {
+    title: 'Edil Ozi',
+    description: 'Explore the principles of minimalist design, where simplicity and functionality converge.'
+  },
+  {
+    title: 'Color Psychology in UI/UX Design',
+    description:
+      'Discover how to strategically use colors to evoke emotions, convey messages, and improve overall design effectiveness'
+  },
+  {
+    title: 'Responsive Design for a Seamless User Experience',
+    description:
+      'Learn techniques to create adaptable interfaces that provide a consistent and optimal user experience across various screen sizes.'
+  },
+  {
+    title: 'Typography in Digital Design',
+    description:
+      'Explore different font types, pairings, and typographic hierarchies to enhance readability, convey brand personality, and elevate your designs.'
+  },
+  {
+    title: 'User-Centered Design: Putting People First',
+    description:
+      'Dive into the principles of user-centered design, where user needs and preferences guide the design process.'
+  },
+  {
+    title: 'The Future of Interactive Design',
+    description:
+      'From augmented reality to voice interfaces, explore how emerging innovations are transforming the way users interact with digital products.'
+  }
+]
+
 export const services = [
   {
     title: {
@@ -339,7 +371,7 @@ export const faqspump = [
     text: {
       uk: 'Ми надаємо комплексні послуги з технічного обслуговування, включаючи регулярні перевірки, очищення, змащування та тестування обладнання. Наша мета — забезпечити оптимальну продуктивність і запобігти потенційним проблемам, перш ніж вони стануть серйозними.',
       en: 'We provide comprehensive maintenance services, including regular inspections, cleaning, lubrication, and testing of the equipment. Our goal is to ensure optimal performance and prevent potential issues before they become major problems.',
-      ru: 'Мы предоставляем комплексные услуги по техническому обслуживанию, включая регулярные проверки, чистку, смазку и тестирование оборудования. Наша цель — обеспечить оптимальную производительность и предотвратить потенциальные проблемы до того, как они станут серьезными.'
+      ru: 'Мы предоставляем комплексные услуги по техническому обслуживанию, включая регулярные проверки, чистку, смазку и тестирование оборудования. Наша цель — обеспечить оптимальную производител��ность и предотвратить потенциальные проблемы до того, как они станут серьезными.'
     }
   },
   {
@@ -515,7 +547,7 @@ export const faqssps = [
     },
     text: {
       uk: 'Каналізаційна насосна станція – це споруда, яка збирає та перекачує стічні води з одного місця в інше, як правило, на очисні споруди або на більшу висоту. Це необхідно для забезпечення належного та ефективного потоку стічних вод, запобігання резервним копіям і підтримки чистої та функціональної каналізаційної системи.',
-      en: 'A sewage pumping station is a facility that collects and pumps wastewater from one location to another, typically to a treatment plant or a higher elevation. It is needed to ensure the proper and efficient flow of sewage, preventing backups and maintaining a clean and functioning sewage system.',
+      en: 'A sewage pumping station is a facility that collects and pumps wastewater from one location to another, typically to a treatment plant or a higher elevation. It is needed to ensure the proper and efficient flow of sewage, prevent backups and maintain a clean and functioning sewage system.',
       ru: 'Канализационная насосная станция — это сооружение, которое собирает и перекачивает сточные воды из одного места в другое, обычно на очистные сооружения или на возвышенность. Он нужен для обеспечения правильного и эффективного отвода сточных вод, предотвращения дублирования и поддержания чистой и работоспособной канализационной системы.'
     }
   },
@@ -746,11 +778,7 @@ export const navLinks = [
     title: {
       uk: 'Обслуговування свердловин',
       en: 'Resume',
-      ru: 'Обслуживание скважин',
-      de: 'Обслуговування свердловин',
-      fr: 'Well servicing',
-      es: 'Обслуживание скважин',
-      pl: 'resume'
+      ru: 'Обслуживание скважин'
     },
     path: '/resume'
   },
@@ -758,11 +786,7 @@ export const navLinks = [
     title: {
       uk: 'Облаштування свердловин',
       en: 'Pricing',
-      ru: 'Обустройство скважин',
-      de: 'Облаштування свердловин',
-      fr: 'Well construction',
-      es: 'Обустройство скважин',
-      pl: 'pricing'
+      ru: 'Обустройство скважин'
     },
     path: '/pricing'
   },
@@ -770,11 +794,7 @@ export const navLinks = [
     title: {
       uk: 'Ремонт насосів',
       en: 'Services',
-      ru: 'Ремонт насосов',
-      de: 'Ремонт насосів',
-      fr: 'Pump repair',
-      es: 'Ремонт насосов',
-      pl: 'portfolio'
+      ru: 'Ремонт насосов'
     },
     path: '/services'
   },
@@ -782,11 +802,7 @@ export const navLinks = [
     title: {
       uk: 'Автономна каналізація',
       en: 'Booking',
-      ru: 'Автономная канализация',
-      de: 'Автономна каналізація',
-      fr: 'Autonomous sewerage',
-      es: 'Автономная канализация',
-      pl: 'work'
+      ru: 'Автономная канализация'
     },
     path: '/booking'
   },
@@ -794,11 +810,7 @@ export const navLinks = [
     title: {
       uk: 'Блог',
       en: 'Blog',
-      ru: 'Блог',
-      de: 'Блог',
-      fr: 'Blog',
-      es: 'Блог',
-      pl: 'blog'
+      ru: 'Блог'
     },
     path: '/blog'
   },
@@ -806,11 +818,7 @@ export const navLinks = [
     title: {
       uk: 'Контакти',
       en: 'Contacts',
-      ru: 'Контакты',
-      de: 'Контакти',
-      fr: 'Contacts',
-      es: 'Контакты',
-      pl: 'Contacts'
+      ru: 'Контакты'
     },
     path: '/contacts'
   }
@@ -996,11 +1004,7 @@ export const contacts = [
     label: {
       uk: 'Телефон',
       en: 'Cellphone',
-      ru: 'Телефон',
-      de: 'Телефон',
-      fr: 'Cellphone',
-      es: 'Телефон',
-      pl: 'Phone'
+      ru: 'Телефон'
     },
     link: 'tel:+38-096-463-05-24',
     linkLabel: '+38 096 463 05 24'
@@ -1010,10 +1014,6 @@ export const contacts = [
       uk: 'Електронна пошта',
       en: 'Email',
       ru: 'Електронная Почта',
-      de: 'email',
-      fr: 'email',
-      es: 'email',
-      pl: 'email'
     },
     link: 'mailto:info@devopsick.com',
     linkLabel: 'info@devopsick.com'
@@ -1023,10 +1023,6 @@ export const contacts = [
       uk: 'Локація',
       en: 'Location',
       ru: 'Локация',
-      fr: 'Location',
-      de: 'Location',
-      es: 'Location',
-      pl: 'Location'
     },
     link: 'https://www.google.com.ua/maps/place/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0+%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%BD%D0%B0+%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%B0,+100,+%D0%9A%D0%B8%D1%97%D0%B2,+02000/@50.3630699,30.4650846,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4c85e5edcb549:0xe3822e2551683eaa!8m2!3d50.3630665!4d30.4676595?hl=ru&entry=ttu',
     linkLabel: 'Ukraine'
@@ -1035,11 +1031,7 @@ export const contacts = [
     label: {
       uk: 'Facebook',
       en: 'Facebook',
-      ru: 'Facebook',
-      de: 'Facebook',
-      es: 'Facebook',
-      fr: 'Facebook',
-      pl: 'Facebook'
+      ru: 'Facebook'
     },
     link: 'https://www.facebook.com',
     linkLabel: '@'
@@ -1048,11 +1040,7 @@ export const contacts = [
     label: {
       uk: 'Telegram',
       en: 'Telegram',
-      ru: 'Telegram',
-      es: 'Telegram',
-      fr: 'Telegram',
-      de: 'Telegram',
-      pl: 'Telegram'
+      ru: 'Telegram'
     },
     link: 'https://t.me/Frikadellios',
     linkLabel: '@'
@@ -1061,11 +1049,7 @@ export const contacts = [
     label: {
       uk: 'Viber',
       en: 'Viber',
-      es: 'Viber',
-      fr: 'Viber',
-      de: 'Viber',
-      ru: 'Viber',
-      pl: 'Viber'
+      ru: 'Viber'
     },
     link: 'viber://chat?number=%2B380964630524  rel="nofollow"',
     linkLabel: 'Viber'
@@ -1074,18 +1058,14 @@ export const contacts = [
     label: {
       uk: 'WhatsApp',
       en: 'WhatsApp',
-      es: 'WhatsApp',
-      de: 'WhatsApp',
-      fr: 'WhatsApp',
-      ru: 'WhatsApp',
-      pl: 'WhatsApp'
+      ru: 'WhatsApp'
     },
     link: 'https://wa.me/380964630524',
     linkLabel: '@'
   }
 ]
 
-export const horas = [
+export const houres = [
   '08:00 AM',
   '08:30 AM',
   '09:00 AM',

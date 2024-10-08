@@ -1,14 +1,11 @@
 ---
 import Earth from '@/components/ui/globe'
-import { Sparkles } from '@/components/ui/sparkles'
-import { BackgroundLines } from './ui/background-lines'
 ---
 
 
       <div class="h-screen overflow-hidden bg-trancperent text-foreground">
-         <BackgroundLines className="flex items-center justify-center w-full flex-col px-4" client:visible >
         <article class="grid gap-4 text-center relative z-10 pt-10">
-          <span class="inline-block border p-1 px-3 w-fit mx-auto rounded-full border-primary bg-neon-pink">
+          <span class="inline-block border p-1 px-3 w-fit mx-auto rounded-full border-primary bg-primary">
             <p>Education</p>
           </span>
           <h1 class="text-4xl  font-semibold bg-gradient-to-b from-[#edeffd] to-[#7b9cda] bg-clip-text text-transparent leading-[100%] tracking-tighter">
@@ -20,18 +17,5 @@ import { BackgroundLines } from './ui/background-lines'
           <Earth client:load />
           </div>
         </article>
-        <div class="relative -mt-32 h-80 w-screen overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#fd356e,transparent_90%)] before:opacity-40 after:absolute after:-left-1/2 after:top-1/2 after:aspect-[1/0.7] after:w-[200%] after:rounded-[10%]  after:bg-muted-background ">
-          <Sparkles
-            density={800}
-            speed={1.2}
-            size={1.2}
-            direction="top"
-            opacitySpeed={2}
-            color="#fd356e"
-            className="absolute inset-x-0 bottom-0 h-full w-full md:block"
-            client:load
-          />
-        </div>
-        </BackgroundLines>
       </div>
 

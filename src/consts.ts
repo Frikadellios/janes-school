@@ -1,12 +1,6 @@
 import type { LOGO_TITLE, Links, PageSEO, Site, Socials } from '@/types'
 
-export const NAVIGATION = [
-  { path: '/', name: 'nav.home' },
-  { path: 'blog', name: 'nav.blog' },
-  { path: 'tags', name: 'nav.tags' },
-  { path: 'projects', name: 'nav.projects' },
-  { path: 'about', name: 'nav.about' }
-] as const
+export type SupportedLocale = 'en' | 'ru' | 'uk'
 
 export const POST_METADATA = {
   defaultLayout: 'column', // Default layout for blog posts, options: simple and column

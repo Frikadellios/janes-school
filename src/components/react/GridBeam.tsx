@@ -13,15 +13,16 @@ export const GridBeam: React.FC<{ children: React.ReactNode; className?: string 
 
 export const Beam = () => {
   return (
-    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg
       width="156"
       height="63"
       viewBox="0 0 156 63"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-label="Decorative grid beam"
       className="absolute top-0 left-0 ml-24 mt-8"
     >
+      <title>Decorative grid beam</title>
       <path d="M31 .5h32M0 .5h32m30 31h32m-1 0h32m-1 31h32M62.5 32V0m62 63V31" stroke="url(#grad1)" strokeWidth={1.5} />
       <defs>
         <motion.linearGradient

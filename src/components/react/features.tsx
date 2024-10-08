@@ -1,4 +1,4 @@
-import { Clock, Code, Command, Feather, Palette, Sparkles } from 'lucide-react'
+import { Clock, Code, Command, Feather, Palette, GraduationCap } from 'lucide-react'
 
 interface Feature {
   id: number
@@ -14,7 +14,7 @@ const FeaturesData: Feature[] = [
     id: 1,
     name: 'Easy to Use',
     description: 'SyntaxUI components are designed to be intuitive and easy to use, even for beginners.',
-    icon: <Sparkles size={iconSize} />
+    icon: <GraduationCap size={iconSize} />
   },
   {
     id: 2,
@@ -55,11 +55,11 @@ const FeaturesGrid = () => {
         {FeaturesData.map((feature) => {
           return (
             <div key={feature.id} className="width-fit text-left">
-              <div className="mb-2 w-fit rounded-lg bg-primary p-1 text-center text-neon-cyan ">{feature.icon}</div>
+              <div className="mb-4 w-fit rounded-lg bg-primary p-2 text-center text-neon-cyan ">{feature.icon}</div>
               <div className="scroll-m-20 my-auto mt-2 text-lg mb-1 font-semibold text-foreground hover:text-primary tracking-tight">
                 {feature.name}
               </div>
-              <div className="max-w-sm text-md leading-7 [&:not(:first-child)]:mt-2 leading-6 text-muted-foreground">
+              <div className="max-w-sm font-bold text-sm [&:not(:first-child)]:mt-2 leading-6 text-muted-foreground">
                 {feature.description}
               </div>
             </div>
@@ -73,7 +73,7 @@ const FeaturesGrid = () => {
 const FeaturesWithHeading = () => {
   return (
     <div className="my-12 flex w-full flex-col items-center justify-center">
-      <h1 className="scroll-m-20 border-b pb-2 text-3xl font-semibold first:mt-0 tracking-tighter text-foreground md:text-3xl">
+      <h1 className="scroll-m-20 hero border-b pb-2 text-3xl text-center font-bold first:mt-0 tracking-tighter text-primary md:text-3xl">
         SyntaxUI is not like any other component library.
       </h1>
       <p className="leading-7 [&:not(:first-child)]:mt-6 text-center my-3 text-foreground">

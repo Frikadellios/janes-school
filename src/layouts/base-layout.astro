@@ -1,32 +1,28 @@
 ---
-import { cn } from '@/lib/utils'
-import ContainerDot from '@/components/layout/containerDot.astro'
-import ViewTransitions from 'astro/components/ViewTransitions.astro'
+import BaseHead from '@/components/BaseHead.astro'
 import I18NHeader from '@/components/layout/I18nHeaders.astro'
+import ContainerDot from '@/components/layout/containerDot.astro'
 import ProviderAnimations from '@/components/layout/provider-animations.astro'
 import { SITE } from '@/consts'
 import { getLangFromUrl, getLocale, useTranslations } from '@/i18n/config'
-import BaseHead from '@/components/BaseHead.astro'
+import { cn } from '@/lib/utils'
+import ViewTransitions from 'astro/components/ViewTransitions.astro'
 
 export interface Props {
   title?: string | undefined
   description?: string | undefined
   author?: string | undefined
   keywords?: string | undefined
+  copyright?: string | undefined
   bodyClass?: string
   lang?: string
 }
-
-
 
 const locale = getLocale(Astro)
 export type Locale = keyof typeof locale
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
-
-
-
-const { author, keywords, title, description, bodyClass } = Astro.props as Props
+const { author, keywords, title, copyright, description, bodyClass } = Astro.props as Props
 ---
 
 
@@ -40,6 +36,8 @@ const { author, keywords, title, description, bodyClass } = Astro.props as Props
 		/>
     {title ? <meta name="title" content={title} /> : null}
     {description ? <meta name="description" content={description} /> : null}
+    {copyright ? <meta name="copyright" content={copyright} /> : null}
+    {keywords ? <meta name="keywords" content={keywords} /> : null}
     {author ? <meta name="author" content={author} /> : null}
     {keywords ? <meta name="keywords" content={keywords} /> : null}
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />

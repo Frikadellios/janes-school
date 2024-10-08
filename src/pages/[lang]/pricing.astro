@@ -1,15 +1,11 @@
 ---
 import { fade } from 'astro:transitions'
-import Content from '@/components/Content.astro'
-import SpotlightSection from '@/components/SpotlightSection.astro'
-import CtaImage from '@/components/cta-image.astro'
+
+import Services from '@/components/Services.astro'
+import { FeaturesSectionDemo } from '@/components/react/SimpleWithCard'
 import { getLocale } from '@/i18n/config'
 import { LANGUAGES_ARRAY, getLangFromUrl, useTranslations } from '@/i18n/config'
 import Layout from '@/layouts/Layout.astro'
-import { FeaturesSectionDemo } from '@/components/react/SimpleWithCard'
-import FeaturesWithHeading from '@/components/react/features'
-import { DropdownMenu } from '@/components/react/dropdown-menu'
-
 
 export const getStaticPaths = () => {
   return LANGUAGES_ARRAY.map((lang) => ({
@@ -25,10 +21,6 @@ export const prerender = true
 ---
 
 <Layout title={t('site-title')} description={t('site-description')} lang={locale} transition:animate={fade({ duration: '0.4s' })}>
-  <SpotlightSection />
-  <DropdownMenu client:visible />
-  <CtaImage />
-  <FeaturesSectionDemo />
-  <FeaturesWithHeading />
-  <Content />
+<Services />
+<FeaturesSectionDemo />
 </Layout>
